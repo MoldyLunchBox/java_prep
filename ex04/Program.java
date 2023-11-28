@@ -7,23 +7,17 @@ import java.util.Map;
 public class Program {
     public static void main(String[] args) {
         String str = "aaaaaaabbbbbbssssssaaaaa";
-        Map<Character, Integer> myMap = new HashMap<>();
+        char[][] stats = new char[127][2];
+
         int max = Integer.MIN_VALUE;
         for (Character c : str.toCharArray()) {
-            myMap.put(c, myMap.getOrDefault(c, 0) + 1);
-            max = max > myMap.getOrDefault(c, 0) ? max : myMap.getOrDefault(c, 0) + 1;
+            stats[(int) c][0] = c;
+            stats[(int) c][1]++;
+
         }
 
-        String[] res = printMap(myMap, max);
-        for (int i = 0; i < res.length; i++) {
-            char [] bar = res[i].toCharArray();
-            for (int j = 0; j < bar.length; j++) {
-                
-            }
-        }
-
-        for (String x : res) {
-            System.out.println(x);
+        for(char [] index: stats){
+            System.out.println(index[0] + "=" + index[1] );
         }
 
     }
@@ -39,4 +33,4 @@ public class Program {
         return arr;
     }
 
-}
+}************************
